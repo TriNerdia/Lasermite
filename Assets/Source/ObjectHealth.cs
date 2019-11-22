@@ -11,6 +11,7 @@ public class ObjectHealth : MonoBehaviour
     public bool IsDead { get { return Health <= 0; } }
     public TMPro.TMP_Text HPText;
     Animation enemyFlicker;
+    public AudioSource healSound;
 
     public void Start()
     {
@@ -70,6 +71,7 @@ public class ObjectHealth : MonoBehaviour
             if (collision.gameObject.tag == "power up")
             // detects collision with an object named power up, duplicate script to add different kinds
             {
+                healSound.Play(0);
                 //Remove the pickup from game
                 Destroy(collision.gameObject);
                 //increase health or add other affect to player
