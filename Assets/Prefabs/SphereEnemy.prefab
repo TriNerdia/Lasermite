@@ -59,7 +59,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sword: {fileID: 661596802021177639}
   TargetTag: Player
-  attackKey: 108
 --- !u!1 &3376672736656544403
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +75,7 @@ GameObject:
   - component: {fileID: 8897796118381824656}
   - component: {fileID: 6459373355728170911}
   - component: {fileID: 920325297403719478}
+  - component: {fileID: 5134189345657592678}
   m_Layer: 0
   m_Name: SphereEnemy
   m_TagString: Enemy
@@ -173,7 +173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   MaxHealth: 100
-  powerUp: {fileID: 4964288603200149276, guid: 1dc1ac8acc0db3547876714296a102c1, type: 3}
+  powerUp: {fileID: 5332542169082165363, guid: 6e41a148e67e8e74eb66eecf0ca0dbe3, type: 3}
+  HPText: {fileID: 0}
 --- !u!114 &8897796118381824656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +225,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sword: {fileID: 661596802021177639}
   TargetTag: Player
-  attackKey: 108
+--- !u!111 &5134189345657592678
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3376672736656544403}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: f4bf4d1ad0b82704eaeceaddeceda3d9, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: f4bf4d1ad0b82704eaeceaddeceda3d9, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &3376672737904124212
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,13 +265,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3376672737904124212}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.5}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3376672736656544399}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &3376672737904124210
 Light:
   m_ObjectHideFlags: 0
@@ -265,12 +281,12 @@ Light:
   m_GameObject: {fileID: 3376672737904124212}
   m_Enabled: 1
   serializedVersion: 9
-  m_Type: 2
+  m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
+  m_Range: 2
+  m_SpotAngle: 50
+  m_InnerSpotAngle: 5
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -440,3 +456,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordAnimation: {fileID: 0}
   swordDamage: 10
+  audioData: {fileID: 0}
+  lowPitchRange: 0.95
+  highPitchRange: 1.05
