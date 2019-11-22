@@ -10,11 +10,9 @@ public class ObjectHealth : MonoBehaviour
     public GameObject powerUp;
     public bool IsDead { get { return Health <= 0; } }
     public TMPro.TMP_Text HPText;
-    Animation enemyFlicker;
 
     public void Start()
     {
-        enemyFlicker = GetComponent<Animation>();
         if (tag == "Player")
         {
             HPText.text = Health + "/" + MaxHealth;
@@ -24,10 +22,6 @@ public class ObjectHealth : MonoBehaviour
     public void TakeDamage(int damagePoints)
     {
         Health -= damagePoints;
-        if (this.gameObject.tag == "Enemy")
-        {
-            enemyFlicker.Play("SphereEnemyFlicker");
-        }
         if (Health <= 0)
         {
             Health = 0;
