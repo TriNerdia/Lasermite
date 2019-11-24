@@ -11,7 +11,9 @@ public class ObjectHealth : MonoBehaviour
     public bool IsDead { get { return Health <= 0; } }
     public TMPro.TMP_Text HPText;
     Animation enemyFlicker;
+
     public AudioSource healSound;
+    public AudioSource damageSound;
 
     public void Start()
     {
@@ -28,6 +30,7 @@ public class ObjectHealth : MonoBehaviour
         if (this.gameObject.tag == "Enemy")
         {
             enemyFlicker.Play("SphereEnemyFlicker");
+            damageSound.Play(0);
         }
         if (Health <= 0)
         {
@@ -41,9 +44,14 @@ public class ObjectHealth : MonoBehaviour
             }
             else
             {
-                Destroy(this.gameObject);
+                
                 if (this.gameObject.tag == "Enemy")
+                {
+                    damageSound.Play(0);
                     Instantiate(powerUp, transform.position, transform.rotation);
+                }
+                Destroy(this.gameObject);
+
             }
         }
         if(tag == "Player")
