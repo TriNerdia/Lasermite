@@ -29,7 +29,7 @@ public class SwordAttack : MonoBehaviour
 
     private void OnDisable()
     {
-        if (transform.parent.tag == "Player")
+       // if (transform.parent.tag == "Player")
         {
             float randomPitch = Random.Range(lowPitchRange, highPitchRange);
             audioData.pitch = randomPitch;
