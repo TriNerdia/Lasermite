@@ -26,11 +26,11 @@ public class ObjectHealth : MonoBehaviour
 
     public void TakeDamage(int damagePoints)
     {
+        damageSound.Play();
         Health -= damagePoints;
         if (this.gameObject.tag == "Enemy")
         {
             enemyFlicker.Play("SphereEnemyFlicker");
-            damageSound.Play(0);
         }
         if (Health <= 0)
         {
@@ -47,7 +47,7 @@ public class ObjectHealth : MonoBehaviour
                 
                 if (this.gameObject.tag == "Enemy")
                 {
-                    damageSound.Play(0);
+                    //damageSound.Play(0);
                     Instantiate(powerUp, transform.position, transform.rotation);
                 }
                 Destroy(this.gameObject);

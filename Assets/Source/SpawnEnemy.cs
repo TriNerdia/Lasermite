@@ -11,6 +11,8 @@ public class SpawnEnemy : MonoBehaviour
     int numEnemies;
     public int SpawnDelay = 5;
     bool spawning;
+    public AudioSource spawnSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class SpawnEnemy : MonoBehaviour
             spawning = true;
             yield return wait;
             Instantiate(Enemy, transform.position, transform.rotation);
+            spawnSound.Play(0);
             spawning = false;
         }
     }

@@ -176,6 +176,7 @@ MonoBehaviour:
   MaxHealth: 100
   powerUp: {fileID: 5332542169082165363, guid: 6e41a148e67e8e74eb66eecf0ca0dbe3, type: 3}
   HPText: {fileID: 0}
+  healSound: {fileID: 0}
   damageSound: {fileID: 5262757606044898877}
 --- !u!114 &8897796118381824656
 MonoBehaviour:
