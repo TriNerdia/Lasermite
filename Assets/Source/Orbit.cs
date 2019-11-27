@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Orbit : MonoBehaviour
 {
-    #pragma strict
+   
 
     public Transform center;
     public Vector3 axis = Vector3.up;
