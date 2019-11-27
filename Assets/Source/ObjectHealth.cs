@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class ObjectHealth : MonoBehaviour
 {
     public int Health = 100;
@@ -12,8 +14,12 @@ public class ObjectHealth : MonoBehaviour
     public TMPro.TMP_Text HPText;
     Animation enemyFlicker;
 
+   // private Vector3 objectLocation;
+
     public AudioSource healSound;
-    public AudioSource damageSound;
+    public AudioSource test;
+    public AudioClip damageSound;
+    public float damageVolume = 1f;
 
     public void Start()
     {
@@ -26,7 +32,9 @@ public class ObjectHealth : MonoBehaviour
 
     public void TakeDamage(int damagePoints)
     {
-        damageSound.Play();
+        //objectLocation = this.gameObject.transform.position;
+        AudioSource.PlayClipAtPoint(damageSound, transform.position, damageVolume);
+        //damageSound.Play();
         Health -= damagePoints;
         if (this.gameObject.tag == "Enemy")
         {

@@ -1,5 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &555161927078677062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9097458334551671860}
+  - component: {fileID: 8023260380659463417}
+  m_Layer: 0
+  m_Name: ListenerObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9097458334551671860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555161927078677062}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2326916195030023698}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!81 &8023260380659463417
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555161927078677062}
+  m_Enabled: 1
 --- !u!1 &1630100172436114589
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +49,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2326916195030023698}
   - component: {fileID: 438556389811112845}
-  - component: {fileID: 8248549075302819165}
   - component: {fileID: 4595329364802787955}
   m_Layer: 0
   m_Name: Camera
@@ -29,7 +67,8 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 9097458334551671860}
   m_Father: {fileID: 4350260523196724374}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -76,14 +115,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8248549075302819165
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630100172436114589}
-  m_Enabled: 1
 --- !u!114 &4595329364802787955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +244,9 @@ MonoBehaviour:
   powerUp: {fileID: 0}
   HPText: {fileID: 0}
   healSound: {fileID: 2364276100624720368}
-  damageSound: {fileID: -8560839810978508689}
+  test: {fileID: -8560839810978508689}
+  damageSound: {fileID: 8300000, guid: fd013c70842a93643b7b253d2088273b, type: 3}
+  damageVolume: 1
 --- !u!114 &4350260523196724369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,7 +527,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2cd5528a913893444a71e658b67c6b7e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0

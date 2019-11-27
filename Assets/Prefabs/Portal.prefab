@@ -240,7 +240,8 @@ MonoBehaviour:
   powerUp: {fileID: 0}
   HPText: {fileID: 0}
   healSound: {fileID: 0}
-  damageSound: {fileID: 692328320890917803}
+  test: {fileID: 692328320890917803}
+  damageSound: {fileID: 8300000, guid: b4b014e8220927b45b8ff55bf0d2fe26, type: 3}
 --- !u!82 &5369509394314117268
 AudioSource:
   m_ObjectHideFlags: 0
